@@ -280,5 +280,7 @@ class Solution:
 
 13/08/2023
 
+GFG POTD Solution
+
 
 
