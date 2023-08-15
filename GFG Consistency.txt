@@ -383,3 +383,7 @@ class Solution:
                 count-=1
             max_count=max(max_count,count)
         return ones+max_count
+
+
+
+LEETCODE SOLUTION
