@@ -411,3 +411,20 @@ class Solution:
 
 
 GFG POTD SOLUTION 
+
+class Solution {
+    public static int findCatalan(int n) {
+        // code here
+        long dp[]=new long[n+1];
+        dp[0]=dp[1]=1L;
+        long mod=1000_000_007L;
+        for(int j=2;j<=n;j++){
+            long ans=0;
+            for (int i = 1; i <=j ; i++) {
+                ans=(ans+(dp[i-1]*dp[j-i])%mod)%mod;
+            }
+            dp[j]=ans;
+        }
+        return (int)(dp[n]%mod);
+    }
+}
