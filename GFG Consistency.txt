@@ -454,3 +454,37 @@ public:
         return ans;
     }
 };
+
+
+
+class Solution:
+    def searchWord(self, grid, word):
+        n, m, k = len(grid), len(grid[0]), len(word)
+        
+        D = [ [-1,-1], [-1, 0], [-1,1],    
+              [ 0,-1],          [ 0,1],     
+              [ 1,-1], [ 1, 0], [ 1,1]  ]
+        def getNextIJ(i, j, direction):
+            return i+D[direction][0], j+D[direction][1]
+            
+            
+        def dfs(direction, curLen, curI, curJ):
+            if curLen == k:
+                return True
+            if not (0<=curI<n and 0<=curJ<m):
+                return False
+            if word[curLen] != grid[curI][curJ]:
+                return False
+            nextI, nextJ = getNextIJ(curI, curJ, direction)
+            return dfs(direction, curLen+1, nextI, nextJ)
+        def match(i, j):
+            for dire in range(8):
+                nextI, nextJ = getNextIJ(i, j, dire)
+                if dfs(dire, 1, nextI, nextJ):
+                    return True
+        ans = []
+        for i in range(n):
+            for j in range(m):
+                if grid[i][j] == word[0] and match(i, j):
+                    ans.append([i, j])
+        return ans
