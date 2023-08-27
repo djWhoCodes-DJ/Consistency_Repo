@@ -684,4 +684,9 @@ ____class Solution{
 };
 _____________________________________________________
 
+GFG 
 
+class Solution:
+    def reverseWord(self, s):
+        #your code here
+        return s[::-1]
