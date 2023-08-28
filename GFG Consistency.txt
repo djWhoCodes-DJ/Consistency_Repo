@@ -709,3 +709,7 @@ class Solution:
                         dp[stones[i] + step].add(step)
         
         return len(dp[stones[-1]]) > 0
+
+
+
+_________________________________________________________
