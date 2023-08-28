@@ -713,3 +713,12 @@ class Solution:
 
 
 _________________________________________________________
+
+def removeDuplicates(head):
+    #code here
+        cur = head
+        while cur is not None:
+            while cur.next and cur.next.data == cur.data:
+                cur.next = cur.next.next
+            cur = cur.next
+        return head   
