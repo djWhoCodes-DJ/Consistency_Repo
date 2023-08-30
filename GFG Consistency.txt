@@ -42,3 +42,6 @@ class Solution:
                 max_score, best_hour = score, i
                 
         return best_hour + 1
+
+
+_________________________________________________________
