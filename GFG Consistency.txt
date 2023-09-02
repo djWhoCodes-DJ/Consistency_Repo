@@ -218,3 +218,32 @@ public:
         return ans;
     }
 };
+
+
+_________________________________________________________
+
+GFG
+
+class Solution:
+    def getCount(self,root,n):
+        #code here
+        arr=[]
+        ans=0
+        def inorder(root, level):
+            if root.left:
+                inorder(root.left,level+1)
+            if root.right:
+                inorder(root.right,level+1)
+            if root.left==None and root.right==None:
+                arr.append((root.data, level))
+        inorder(root, 1)
+        s=len(arr)
+        arr.sort(key=lambda x:x[1],reverse=False)
+        # print(arr)
+
+        for i in range(s):
+            n=n-arr[i][1]
+            if n>=0:
+                ans+=1
+
+        return ans
