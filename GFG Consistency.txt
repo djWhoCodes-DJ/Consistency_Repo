@@ -268,3 +268,12 @@ class Solution:
                     dp[i] = min(dp[i], dp[i-l])
                     
         return dp[-1]
+
+
+_________________________________________________________
+
+Leetcode
+
+class Solution:
+    def uniquePaths(self, m: int, n: int) -> int:
+        return math.comb(m+n-2, m-1)
