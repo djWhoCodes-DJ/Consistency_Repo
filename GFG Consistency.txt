@@ -527,3 +527,7 @@ ArrayList<Integer> find(int arr[], int n, int x)
         ans.add(idx);
         return ans;
     }
+
+
+
+_________________________________________________________
