@@ -560,6 +560,8 @@ public:
 _________________________________________________________
 
 
+GFG
+
 int equilibriumPoint(long long arr[], int n) {
         long long left=0,right=n-1,left_sum = 0,right_sum =0;
         while(left < right)
