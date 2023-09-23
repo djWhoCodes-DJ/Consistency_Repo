@@ -559,3 +559,22 @@ public:
 
 _________________________________________________________
 
+
+int equilibriumPoint(long long arr[], int n) {
+        long long left=0,right=n-1,left_sum = 0,right_sum =0;
+        while(left < right)
+        {
+            if(left_sum==0 and right_sum == 0)
+            {
+                left_sum += arr[left];
+                right_sum += arr[right];
+                left++,right--;
+            }
+            else if(left_sum < right_sum)
+                left_sum += arr[left++];
+            
+            else
+                right_sum += arr[right--];
+        }
+        return left_sum == right_sum ? left+1 : -1;
+    }
