@@ -679,3 +679,8 @@ class Solution:
             ans.append(-tmp[0])
             hq.heappush(mxh,(-A[tmp[1]-1]-B[tmp[2]],tmp[1]-1,tmp[2],))
         return ans
+
+
+_________________________________________________________
+
+
